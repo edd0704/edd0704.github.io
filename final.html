@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>個人網站 — 賴奕廷</title>
+    <style>
+        :root {
+            --bg: #c2c0c0;
+            --card: #ffffff;
+            --accent: #3b82f6;
+            --muted: #6b7280
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans TC', 'Helvetica Neue', Arial;
+            line-height: 1.6;
+            background: var(--bg);
+            color: #111
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 32px auto;
+            padding: 24px
+        }
+
+        header {
+            display: flex;
+            gap: 20px;
+            align-items: center
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            flex: 0 0 120px;
+            overflow: hidden;
+            display: inline-grid;
+            place-items: center;
+            background: linear-gradient(135deg, #e0f2fe, #eef2ff)
+        }
+
+        .avatar svg {
+            width: 100%;
+            height: 100%
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.6rem
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+        .card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+            margin-top: 18px
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        section {
+            margin-top: 18px
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 20px
+        }
+
+        @media(max-width:880px) {
+            .two-col {
+                grid-template-columns: 1fr
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .avatar {
+                width: 96px;
+                height: 96px
+            }
+        }
+
+        ul {
+            padding-left: 1.2rem
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .skill .bar {
+            height: 10px;
+            background: #e6eefc;
+            border-radius: 999px;
+            overflow: hidden
+        }
+
+        .skill .fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 999px
+        }
+
+        footer {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center
+        }
+
+        .label {
+            font-weight: 700;
+            color: #0f172a
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar">
+                <!-- 使用 img/unnamed.jpg 作為頭像 -->
+                <img src="unnamed.jpg" alt="頭像" style="width:100%;height:100%;object-fit:cover;display:block" />
+            </div>
+            <div>
+                <h1>賴奕廷 — 資訊管理系學生</h1>
+                <div class="meta">國立聯合大學 資訊管理系 • 熱衷於網頁開發與資料分析</div>
+                <nav>
+                    <a href="#about">關於我</a>
+                    <a href="#education">教育背景</a>
+                    <a href="#experience">經驗與實習</a>
+                    <a href="#skills">專業技能</a>
+                    <a href="#articles">文章</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="about" class="card">
+            <div class="two-col">
+                <div>
+                    <h2>關於我</h2>
+                    <p>你好，我是賴奕廷，目前就讀國立聯合大學資訊管理學系。擅長前端開發與資料分析，喜歡把資料轉成可理解的視覺化介面。
+                        我的目標是成為全端工程師或資料庫工程師，能在團隊中負責系統設計與資料處理流程。</p>
+                    <p><span class="label">興趣：</span>網頁開發、資料視覺化、專案管理、閱讀技術文章</p>
+                </div>
+                <aside>
+                    <div class="card">
+                        <div class="label">聯絡方式</div>
+                        <div class="meta">Email:eddie1995771@gmail.com</div>
+                        <div class="meta">Instagram：yeeee_0704</div>
+                        <div style="height:12px"></div>
+                        <div class="label">目前目標</div>
+                        <div class="meta">尋找實習機會（前端/資料）或承接專案合作</div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="education" class="card">
+            <h2>教育背景</h2>
+            <ul>
+                <li><strong>國立聯合大學 — 資訊管理系</strong>（學士在學中）
+                    <div class="meta">重要課程：資料結構、資料庫程式設計、前端網頁設計、行動應用程式設計</div>
+                </li>
+                <li style="margin-top:8px"><strong>學術專案：</strong>
+                    <ul>
+                        <li>課程專案：設計一個圖書管理系統（包含後端 API 與前端介面）</li>
+                        <li>資料分析專題：使用 Python 與 Pandas 分析校園網路流量並視覺化結果</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="experience" class="card">
+            <h2>經驗與實習</h2>
+            <ul>
+                <li>
+                    <strong>前端實習生 — 範例科技公司</strong>（2025/07 - 2025/09）
+                    <div class="meta">負責重構公司內部管理後台，使用 HTML/CSS/JavaScript、React，改善載入效能並增加單元測試。學到前端最佳化、團隊協作與版本控制流程。</div>
+                </li>
+                <li style="margin-top:8px">
+                    <strong>志願者 — 校園程式社群</strong>
+                    <div class="meta">協助舉辦程式工作坊，帶領新手學員完成簡單專案，培養教學與溝通能力。</div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>專業技能</h2>
+            <div style="display:grid;gap:12px">
+                <div class="skill">
+                    <div style="display:flex;justify-content:space-between">
+                        <div class="label">HTML / CSS</div>
+                        <div class="meta">80%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="fill" style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div style="display:flex;justify-content:space-between">
+                        <div class="label">JavaScript / React</div>
+                        <div class="meta">80%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="fill" style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div style="display:flex;justify-content:space-between">
+                        <div class="label">Python / 資料分析</div>
+                        <div class="meta">65%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="fill" style="width:65%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div style="display:flex;justify-content:space-between">
+                        <div class="label">SQL / 資料庫</div>
+                        <div class="meta">60%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="fill" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div style="display:flex;justify-content:space-between">
+                        <div class="label">版本控制 / 團隊合作 (Git)</div>
+                        <div class="meta">85%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="fill" style="width:85%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="articles" class="card">
+            <h2>文章與專欄</h2>
+            <article style="display:grid;gap:12px">
+                <h3>資管視角：從資料到決策的橋樑</h3>
+                <div class="meta">發布：2026-06-17 • 類別：資料分析 / 專業見解</div>
+                <figure style="margin:0">
+                    <img src="img1.png" alt="文章示意圖" style="width:80%;height:auto;border-radius:8px;display:block" />
+                    <figcaption class="meta">示意圖：如何把雜亂的數據轉成有意義的圖表</figcaption>
+                </figure>
+                <p>在資訊管理領域，資料不僅是靜態的記錄，它們是能驅動決策的關鍵資產。良好的資料處理流程（包含清理、整合與驗證）會直接影響到分析結果的可靠性與可解釋性。</p>
+                <p>我常用的流程是先以 SQL 抽取資料，接著用 Python 與 Pandas 清理，再使用視覺化工具或前端圖表庫（例如 Chart.js 或 D3）呈現，最後與利害關係人討論可執行的商業策略。</p>
+                <p>如果你對某個專題想更深入討論（例如 A/B 測試、特徵工程或資料倉儲設計），歡迎聯絡我或留言，我可以把相關程式碼片段與範例資料公開在 GitHub。</p>
+            </article>
+        </section>
+
+        <footer>
+            © 2026 賴奕廷 — 期末個人網站
+        </footer>
+    </div>
+</body>
+
+</html>
